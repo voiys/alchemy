@@ -1,0 +1,27 @@
+{
+  "name": "cloudflare-openorange",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alchemy-run/alchemy.git",
+    "directory": "examples/cloudflare-openorange"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "alchemy dev",
+    "orange": "rm -rf dist && mkdir dist && cp .alchemy/bundles/CloudflareOpenOrange-*-Api/*.js dist/ && orange dev"
+  },
+  "dependencies": {
+    "@alchemy.run/cloudflare": "workspace:*",
+    "@cloudflare/workers-types": "catalog:",
+    "@effect/platform-bun": "catalog:",
+    "@effect/platform-node": "catalog:",
+    "alchemy": "workspace:*",
+    "effect": "catalog:"
+  },
+  "devDependencies": {
+    "open-orange": "1.0.3"
+  }
+}

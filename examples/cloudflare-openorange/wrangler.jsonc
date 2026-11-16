@@ -1,0 +1,9 @@
+{
+  "name": "cloudflare-openorange",
+  "main": "dist/Api.js",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "durable_objects": { "bindings": [{ "name": "Counter", "class_name": "Counter" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Counter"] }],
+  "kv_namespaces": [{ "binding": "Visits", "id": "visits" }],
+}
