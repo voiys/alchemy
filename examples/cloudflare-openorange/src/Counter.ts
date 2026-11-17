@@ -10,7 +10,8 @@ export default class Counter extends Cloudflare.DurableObject<Counter>()(
       return {
         increment: () =>
           Effect.gen(function* () {
-            const count = ((yield* state.storage.get<number>("count")) ?? 0) + 1;
+            const stored = yield* state.storage.get<number>("count");
+            const count = (stored ?? 0) + 1;
             yield* state.storage.put("count", count);
             return count;
           }),

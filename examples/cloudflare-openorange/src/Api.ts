@@ -13,7 +13,7 @@ export default class Api extends Cloudflare.Worker<Api>()(
     const visits = yield* Cloudflare.KV.ReadWriteNamespace(Visits);
 
     return {
-      // GET /:name — bump the Counter object for :name and record the visit in Visits
+      // /:name — bump the Counter object for :name and record the visit in Visits
       fetch: Effect.gen(function* () {
         const request = yield* HttpServerRequest;
         const name = new URL(request.url, "http://localhost").pathname.slice(1) || "lobby";
